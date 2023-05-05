@@ -26,11 +26,11 @@ export default {
 
       let fullUrl = store.baseUrl;
 
-      if (store.type === 'serieTv') {
-        fullUrl += 'search/series';
-      } else if (store.nameToSearch) {
+      if (store.seriesType === 'seriesTv') {
+        fullUrl += 'search/tv';
+      } else if (store.seriesType === 'movies') {
         fullUrl += 'search/movie';
-      } else {
+      } else if (store.seriesType === 'all') {
         fullUrl += 'movie/popular';
       }
 
@@ -48,8 +48,8 @@ export default {
           //Al primo caricamento filtro gli i title e li salvo nello store
           if (store.filterMovies.length === 0) {
             store.moviesList.forEach(element => {
-              if (!store.filterMovies.includes(element.title)) {
-                store.filterMovies.push(element.title)
+              if (!store.filterMovies.includes(element.tv)) {
+                store.filterMovies.push(element.tv)
               }
             });
           }

@@ -22,11 +22,17 @@ export default {
         :originalTitle="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" />
     </div>
 
+    <div class="row">
+      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.name"
+        :originalTitle="movie.original_name" :language="movie.original_language" :vote="movie.vote_average" />
+    </div>
+
   </div>
 </template>
 <style lang="scss" scoped>
 .container {
   width: 90%;
   margin: 0 auto;
+  margin-top: 50px;
 }
 </style>

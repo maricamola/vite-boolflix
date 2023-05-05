@@ -41,5 +41,15 @@ header {
     align-items: center;
     padding: 20px;
   }
+
+  .menu {
+    color: white;
+    display: flex;
+  }
+
+  ul {
+    list-style: none;
+    align-items: center;
+  }
 }
 </style>

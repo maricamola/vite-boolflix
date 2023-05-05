@@ -23,6 +23,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.sc-card {
+  flex-grow: 1;
+  flex-basis: calc(100% / 5);
+  height: 250px;
+  border: 1px solid black;
+  text-align: end;
+}
+
 img {
   width: 20px;
 }

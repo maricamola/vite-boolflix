@@ -24,13 +24,14 @@ export default {
     </div>
 
     <div class="select d-flex">
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Categoria</option>
-        <option value="1">Film</option>
-        <option value="2">Serie Tv</option>
+      <select @change="$emit('startSearch')" v-model="store.seriesType" class="form-select"
+        aria-label="Default select example">
+        <!-- <option v-for="tv in store.filterMovies" :key="tv" :value="tv">{{ tv }}</option> -->
+        <option value="seriesTv">Tv series</option>
+        <option value="movies">Movies</option>
+        <option selected value="all">All</option>
       </select>
     </div>
-
   </div>
 </template>
 

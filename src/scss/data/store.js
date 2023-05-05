@@ -6,5 +6,7 @@ export const store = reactive({
   moviesList: [],
   isLoading: true,
   filterMovies: [],
-  nameToSearch: null
+  nameToSearch: '',
+  moviesType: null,
+  seriesType: 'all',
 });
