@@ -2,21 +2,28 @@
 export default {
   name: 'Card',
   props: {
+    moviePoster: String,
     img: String,
     title: String,
+    originalTitle: String,
     language: String,
-    vote: String
+    vote: Number
   }
 }
 </script>
 
 <template>
   <div class="sc-card col">
-    <img src="" alt="">
     <h4>{{ title }}</h4>
-    <p>{{ language }}</p>
+    <p>{{ originalTitle }}</p>
+    <p><img :src="`flags/language-${language}.svg`" alt="original_language">
+    </p>
     <p>{{ vote }}</p>
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+img {
+  width: 20px;
+}
+</style>

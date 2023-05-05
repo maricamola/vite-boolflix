@@ -1,8 +1,20 @@
 <script>
+import { store } from '../scss/data/store'
+
+
 export default {
-  name: 'SearchBar'
+  name: 'SearchBar',
+
+  data() {
+    return {
+      store
+    }
+  },
 }
+
 </script>
+
+
 <template>
   <div class="searchBar d-flex">
 

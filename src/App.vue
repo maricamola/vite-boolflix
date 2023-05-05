@@ -2,6 +2,7 @@
 import axios from 'axios'
 import Header from './components/Header.vue'
 import CardsContainer from './components/CardsContainer.vue'
+import Loader from './components/partials/Loader.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
 import { store } from './scss/data/store'
@@ -17,14 +18,20 @@ export default {
     Header,
     CardsContainer,
     Main,
-    Footer
+    Footer,
+    Loader
   },
   methods: {
     getApi() {
-      axios.get(store.apiUrl)
+      store.isLoading = true;
+      axios.get(store.apiUrl, {
+        params: {
+          query: 'Avatar'
+        }
+      })
         .then(result => {
-          store.moviesList = result.data
-          console.log(store.moviesList);
+          store.moviesList = result.data.results;
+          store.isLoading = false;
         })
     }
   },
@@ -37,11 +44,17 @@ export default {
 <template>
   <Header />
 
-  <CardsContainer />
+  <Loader v-if="store.isLoading" />
 
-  <Main />
+  <div v-else>
 
-  <Footer />
+    <CardsContainer />
+
+    <Main />
+
+    <Footer />
+
+  </div>
 </template>
 
 <style lang="scss">
