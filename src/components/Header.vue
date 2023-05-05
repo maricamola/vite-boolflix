@@ -15,7 +15,7 @@ export default {
         <img src="logo-boolflix.png" alt="logo">
       </div>
 
-      <SearchBar />
+      <SearchBar @startSearch="getApi" />
     </div>
 
   </header>

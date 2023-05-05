@@ -18,7 +18,7 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.original_title"
+      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.title"
         :originalTitle="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" />
     </div>
 

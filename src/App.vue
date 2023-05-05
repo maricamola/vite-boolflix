@@ -26,12 +26,21 @@ export default {
       store.isLoading = true;
       axios.get(store.apiUrl, {
         params: {
-          query: 'Avatar'
+          query: ('Avatar')
         }
       })
         .then(result => {
           store.moviesList = result.data.results;
           store.isLoading = false;
+
+          //Al primo caricamento filtro gli i title e li salvo nello store
+          if (store.filterMovies.length === 0) {
+            store.moviesList.forEach(element => {
+              if (!store.filterMovies.includes(element.title)) {
+                store.filterMovies.push(element.title)
+              }
+            });
+          }
         })
     }
   },
