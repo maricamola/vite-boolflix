@@ -18,10 +18,9 @@ export default {
   <div class="searchBar d-flex">
 
     <div class="search d-flex me-5">
-      <input v-model.trim="store.nameToSearch" class="form-control me-3" type="text" placeholder="Ricerca"
-        aria-label="default input example">
-      <button @click="$emit(startSearch)" type="submit" class="btn btn"><i
-          class="fa-solid fa-magnifying-glass"></i></button>
+      <input v-model.trim="store.nameToSearch" @keyup.enter="$emit('startSearch')" class="form-control me-3" type="text"
+        placeholder="Ricerca" aria-label="default input example">
+      <button class="btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 
     <div class="select d-flex">

@@ -5,6 +5,12 @@ export default {
   name: 'Header',
   components: {
     SearchBar
+  },
+  methods: {
+    test() {
+      console.log('aaa');
+      this.$emit('updateApi');
+    }
   }
 }
 </script>
@@ -15,7 +21,7 @@ export default {
         <img src="logo-boolflix.png" alt="logo">
       </div>
 
-      <SearchBar @startSearch="getApi" />
+      <SearchBar @startSearch="test" />
     </div>
 
   </header>

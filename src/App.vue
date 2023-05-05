@@ -23,10 +23,22 @@ export default {
   },
   methods: {
     getApi() {
+
+      let fullUrl = store.baseUrl;
+
+      if (store.type === 'serieTv') {
+        fullUrl += 'search/series';
+      } else if (store.nameToSearch) {
+        fullUrl += 'search/movie';
+      } else {
+        fullUrl += 'movie/popular';
+      }
+
       store.isLoading = true;
-      axios.get(store.apiUrl, {
+      axios.get(fullUrl, {
         params: {
-          query: ('Avatar')
+          api_key: store.api_key,
+          query: store.nameToSearch
         }
       })
         .then(result => {
@@ -51,7 +63,7 @@ export default {
 </script>
 
 <template>
-  <Header />
+  <Header @updateApi="getApi" />
 
   <Loader v-if="store.isLoading" />
 
