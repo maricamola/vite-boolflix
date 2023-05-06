@@ -18,16 +18,37 @@ export default {
 <template>
   <div class="container">
     <div class="row">
+
       <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.title"
         :originalTitle="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" />
+
     </div>
 
     <div class="row">
+
       <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.name"
         :originalTitle="movie.original_name" :language="movie.original_language" :vote="movie.vote_average" />
+
     </div>
 
   </div>
+
+  <!-- <div class="container">
+    <div v-if="originalTitle === movie.original_title" class="row">
+
+      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.title"
+        :originalTitle="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" />
+
+    </div>
+
+    <div v-else class="row">
+
+      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.name"
+        :originalTitle="movie.original_name" :language="movie.original_language" :vote="movie.vote_average" />
+
+    </div>
+
+  </div> -->
 </template>
 <style lang="scss" scoped>
 .container {
