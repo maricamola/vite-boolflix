@@ -5,7 +5,9 @@ import CardsContainer from './components/CardsContainer.vue'
 import Loader from './components/partials/Loader.vue'
 import Main from './components/Main.vue'
 import Footer from './components/Footer.vue'
+import Jumbotron from './components/Jumbotron.vue'
 import { store } from './scss/data/store'
+
 
 export default {
   name: 'App',
@@ -16,6 +18,7 @@ export default {
   },
   components: {
     Header,
+    Jumbotron,
     CardsContainer,
     Main,
     Footer,
@@ -64,6 +67,8 @@ export default {
 
 <template>
   <Header @updateApi="getApi" />
+
+  <Jumbotron />
 
   <Loader v-if="store.isLoading" />
 

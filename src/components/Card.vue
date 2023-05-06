@@ -58,6 +58,5 @@ export default {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 20px;
-  transition: opacity 1s ease-in-out;
 }
 </style>
