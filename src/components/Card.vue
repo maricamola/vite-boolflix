@@ -16,7 +16,8 @@ export default {
 </script>
 
 <template>
-  <div class="card" style="width: 16rem;">
+  <div class="card">
+    <!-- style="width: 16rem;" -->
     <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${poster}`" alt="poster">
 
     <div class="card-text">
@@ -43,6 +44,8 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  width: calc(80% / 5);
+
   border: 1px solid black;
   background-size: cover;
   background-repeat: no-repeat;

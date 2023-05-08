@@ -18,7 +18,7 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <h2>I più popolari</h2>
+      <h2>I più popolari <i class="fa-solid fa-chevron-right fa-bounce"></i> </h2>
 
       <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.title"
         :originalTitle="movie.original_title" :language="movie.original_language" :overviewMovie='movie.overview'
@@ -26,13 +26,6 @@ export default {
 
     </div>
   </div>
-
-  <!-- <div class="row">
-
-      <Card v-for="(movie, index) in store.moviesList" :key="index" :title="movie.name"
-        :originalTitle="movie.original_name" :language="movie.original_language" :vote="movie.vote_average" />
-
-    </div> -->
 
 
 
@@ -62,6 +55,16 @@ export default {
   h2 {
     color: #FFFFFF;
     padding: 10px 0;
+  }
+
+  i {
+    display: none;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+  h2:hover i {
+    display: inline-block;
   }
 
   .row {

@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: rgba(0, 0, 0, 0.837);
+  background-color: #141414;
 
   img {
     width: 10%;
