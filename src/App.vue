@@ -48,7 +48,7 @@ export default {
           store.moviesList = result.data.results;
           store.isLoading = false;
 
-          //Al primo caricamento filtro gli i title e li salvo nello store
+          //Al primo caricamento filtro i title e li salvo nello store
           if (store.filterMovies.length === 0) {
             store.moviesList.forEach(element => {
               if (!store.filterMovies.includes(element.tv)) {

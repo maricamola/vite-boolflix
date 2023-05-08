@@ -6,57 +6,63 @@ export default {
     img: String,
     title: String,
     originalTitle: String,
+    overviewMovie: String,
     language: String,
-    vote: Number
+    vote: Number,
+    type: String,
+    poster: String,
   }
 }
 </script>
 
 <template>
-  <div class="sc-card col m-3">
-    <h4>{{ title }}</h4>
-    <p>{{ originalTitle }}</p>
-    <p><img :src="`flags/language-${language}.svg`" alt="original_language">
-    </p>
-    <p>{{ vote }}</p>
+  <div class="card" style="width: 16rem;">
+    <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${poster}`" alt="poster">
 
-    <span class="caption">
-      Descrizione movie
-    </span>
+    <div class="card-text">
+      <h5 class="card-title">{{ title }}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{ originalTitle }}</h6>
+      <h6 class="card-title"><img class="flag" :src="`flags/language-${language}.svg`" alt="original_language"></h6>
+      <p>{{ vote }}</p>
+      <span>
+        {{ overviewMovie }}
+      </span>
+    </div>
+
+
   </div>
 </template>
 
 <style lang="scss" scoped>
-.sc-card {
-  flex-grow: 1;
-  flex-basis: calc(100% / 8);
-  flex-wrap: wrap;
-  height: 250px;
+.card {
   border: 1px solid black;
-  text-align: end;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  padding: 0;
+  margin: 10px;
 
-  img {
+  .poster {
+    width: 100%;
+  }
+
+  .flag {
     width: 20px;
+  }
+
+  .card-text {
+    display: none;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
   }
 }
 
-.caption {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.sc-card:hover .caption {
+.card:hover .card-text {
+  text-align: left;
+  color: white;
   display: block;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.915);
 }
 </style>
