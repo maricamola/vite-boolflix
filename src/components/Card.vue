@@ -84,4 +84,11 @@ export default {
   display: block;
   background-color: rgba(0, 0, 0, 0.915);
 }
+
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+  background: #292626;
+  margin-right: 10px;
+}
 </style>
