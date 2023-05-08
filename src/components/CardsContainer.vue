@@ -68,7 +68,7 @@ export default {
   }
 
   .row {
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 </style>

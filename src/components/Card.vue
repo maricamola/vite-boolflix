@@ -22,11 +22,14 @@ export default {
     <div class="card-text">
       <h5 class="card-title">{{ title }}</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">{{ originalTitle }}</h6>
-      <h6 class="card-title"><img class="flag" :src="`flags/language-${language}.svg`" alt="original_language"></h6>
-      <p>{{ vote }}</p>
-      <span>
-        {{ overviewMovie }}
-      </span>
+
+      <div class="voteFlag">
+        <h6 class="card-title"><img class="flag" :src="`flags/language-${language}.svg`" alt="original_language"></h6>
+        <span class="vote">{{ vote }}</span>
+      </div>
+
+
+      <span class="overviewMovie">{{ overviewMovie }}</span>
     </div>
 
 
@@ -56,6 +59,16 @@ export default {
     height: 100%;
     left: 0;
     top: 0;
+    padding: 5px;
+  }
+
+  .overviewMovie {
+    font-size: 14px;
+  }
+
+  .voteFlag {
+    display: flex;
+    justify-content: space-between;
   }
 }
 
