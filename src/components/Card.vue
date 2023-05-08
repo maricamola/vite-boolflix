@@ -25,10 +25,15 @@ export default {
 
       <div class="voteFlag">
         <h6 class="card-title"><img class="flag" :src="`flags/language-${language}.svg`" alt="original_language"></h6>
-        <span class="vote">{{ vote }}</span>
+
+        <div class="vote">
+          <i v-for="(star, i) in vote" :key="i" class="fa-solid fa-star"></i>
+          <i v-for="(star, i) in 5 - vote" :key="i" class="fa-regular fa-star"></i>
+        </div>
+
+
+
       </div>
-
-
       <span class="overviewMovie">{{ overviewMovie }}</span>
     </div>
 
@@ -60,6 +65,7 @@ export default {
     left: 0;
     top: 0;
     padding: 5px;
+    overflow: auto;
   }
 
   .overviewMovie {
